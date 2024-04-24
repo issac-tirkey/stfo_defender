@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv('your_flow_data.csv')
 
-features = df[['APIT', 'APS', 'CP', 'CB']]
+features = df[['tnfe', 'cp_median', 'apit_iqr', 'apit_std', 'apit_mean', 'apit_cv', 'apit_skewness', 'apit_kurtosis']]
 labels = df['Label']
 
 X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
@@ -26,7 +26,9 @@ model = lgb.train(
     train_set=train_data,
     num_boost_round=300,
     valid_sets=[test_data],
-    early_stopping_rounds=50
+    callbacks=[
+        lgb.early_stopping(stopping_rounds=50),
+    ]
 )
 
 model.save_model('mitigation_model.txt')

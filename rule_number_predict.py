@@ -39,9 +39,9 @@ def parse_flow_entries(flow_entries):
 
 
 def poll_sdn_switch():
-    flow_count = len(collect_flow_entries(1, "s1"))
-    flow_data = collect_flow_entries(1,"s1")
-    return flow_count, flow_data
+    # flow_count = len(collect_flow_entries(1, "s1"))
+    flow_data = collect_flow_entries(1, "s1")
+    return flow_data
 
 
 def main():
@@ -52,7 +52,8 @@ def main():
 
     while True:
         flowtable_data = {}
-        Num_rule, flowtable_data = poll_sdn_switch()
+        flowtable_data = poll_sdn_switch()
+        Num_rule = len(flowtable_data)
         Window.append(Num_rule)
 
         if len(Window) >= Size_window:

@@ -96,7 +96,7 @@ def parse_flow_entries(raw_data):
     for line in lines:
         if line.strip():  # empty lines
             fields = {
-                'duration': float(line.split('duration=')[1].split(',')[0]),
+                'duration': float(line.split('duration=')[1].split(',')[0].strip('s')),
                 'CP': int(line.split('n_packets=')[1].split(',')[0]),
                 'CB': int(line.split('n_bytes=')[1].split(',')[0]),
             }
@@ -106,6 +106,7 @@ def parse_flow_entries(raw_data):
 
 def calculate_statistical_features(entries):
     tnfe = len(entries)
+    features = {}
     for rule in entries:
         duration = rule['duration']
         cp = rule['CP']

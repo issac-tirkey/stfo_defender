@@ -30,7 +30,7 @@ def parse_flow_entries(raw_data):
     for line in lines:
         if line.strip():
             fields = {
-                'duration': float(line.split('duration=')[1].split(',')[0]),
+                'duration': float(line.split('duration=')[1].split(',')[0].strip('s')),
                 'CP': int(line.split('n_packets=')[1].split(',')[0]),
                 'CB': int(line.split('n_bytes=')[1].split(',')[0]),
             }
@@ -38,13 +38,16 @@ def parse_flow_entries(raw_data):
     return entries
 
 
-def replay_traffic(pcap_file, iface, duration):
-    packets = rdpcap(pcap_file)
-    sendp(packets, iface=iface, verbose=False, inter=0.01, realtime=True)
+# def replay_traffic(pcap_file, iface, duration):
+#     packets = rdpcap(pcap_file)
+#     sendp(packets, iface=iface, verbose=False, inter=0.01, realtime=True)
+def replay_traffic(pcap_file, iface):
+    command = ['sudo', 'tcpreplay', '--intf1=' + iface, '--pps=', 1200, pcap_file]
+    subprocess.run(command)
 
 
 def simulate_attack(attack_script):
-    subprocess.Popen(['sudo python3', attack_script])
+    subprocess.Popen(['python3', attack_script])
 
 
 def collect_and_append_data(label, total_duration, switch, output_file):

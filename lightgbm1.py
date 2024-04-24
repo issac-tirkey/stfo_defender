@@ -1,9 +1,12 @@
 import lightgbm as lgb
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 # Load and preprocess your dataset
 # Assuming `X` is your feature matrix and `y` is a vector of labels
+df = pd.read_csv('your_flow_data.csv')
+features = df[['APIT', 'APS', 'CP', 'CB']]
 X, y = load_dataset()
 
 # Split data into training and testing sets
@@ -33,7 +36,9 @@ gbm_model = lgb.train(
     train_set=train_data,
     num_boost_round=300,
     valid_sets=[test_data],
-    early_stopping_rounds=50
+    callbacks=[
+        lgb.early_stopping(stopping_rounds=50),
+    ]
 )
 
 # Save the model

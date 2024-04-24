@@ -12,7 +12,7 @@ def detect_sfto_attack(lightgbm_model, flowtable):
     features = []
     apit_data = []
 
-    tnfe = len(flowtable)  # count of flow entries TNFE
+    tnfe = len(flowtable)
     for rule in flowtable:
         duration = rule['duration']
         cp = rule['CP']
@@ -36,7 +36,6 @@ def detect_sfto_attack(lightgbm_model, flowtable):
     dpred = prediction[0]
     result = 1 if dpred > 0.5 else 0
 
-    # Evict rules if an attack is detected
     if result == 1:
         Evict_rules(flowtable, dpred, cp, cb, apit, aps, fn1, tnfe)
 
@@ -44,9 +43,8 @@ def detect_sfto_attack(lightgbm_model, flowtable):
 
 
 def calculate_features(apit_info):
-    # Calculate statistical features for APIT
     apit_mean = np.mean(apit_info)
-    apit_std = np.std(apit_info, ddof=1)  # ddof=1 provides sample standard deviation
+    apit_std = np.std(apit_info, ddof=1)
     apit_cv = apit_std / apit_mean if apit_mean else 0
     apit_iqr = iqr(apit_info)
     apit_skewness = skew(apit_info)
