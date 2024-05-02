@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="871f789c-7e25-484f-bff6-f9c49ea9afcb" name="Changes" comment="first push sfto">
+      <change afterPath="$PROJECT_DIR$/dataset_creation2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attack_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/attack_detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset_creation.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_creation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset_creation.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dataset_creation1.py" beforeDir="false" afterPath="$PROJECT_DIR$/dataset_creation1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightgbm1.py" beforeDir="false" afterPath="$PROJECT_DIR$/lightgbm1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightgbm2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lightgbm2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rule_number_predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/rule_number_predict.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,16 +40,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.lcrn_model.executor": "Run",
-    "Python.minmaxScaler.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.lcrn_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.minmaxScaler.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tirke\DefenderProto2\STFO" />
@@ -97,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713698941097</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first push sfto">
+      <option name="closed" value="true" />
+      <created>1713935841675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713935841675</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

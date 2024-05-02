@@ -46,7 +46,7 @@ def poll_sdn_switch():
 
 def main():
     Size_window = 5  # The size of the window for prediction
-    TH = 0.65  # Threshold for the rule number
+    TH = 0.75  # Threshold for the rule number
     size_flowtable = 3500  # Size of the flow table
     Window = []
 
